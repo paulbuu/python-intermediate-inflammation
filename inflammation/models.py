@@ -11,7 +11,7 @@ import numpy as np
 
 
 def load_csv(filename):
-    """Load a Numpy array from a CSV
+    """Load a Numpy array from a CSV of patient data
 
     :param filename: Filename of CSV to load
     """
