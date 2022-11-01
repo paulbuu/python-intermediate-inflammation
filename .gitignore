@@ -6,6 +6,7 @@
 .coverage
 
 # Output files
+venv
 *.png
 
 # Python runtime
