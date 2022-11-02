@@ -12,7 +12,6 @@ entrypoints==0.4
 exceptiongroup==1.0.0
 executing==1.2.0
 fonttools==4.38.0
--e git+https://github.com/paulbuu/python-intermediate-inflammation@1389bb597e9b751788600c6904e892e0f37feeca#egg=inflammation_analysis
 iniconfig==1.1.1
 ipykernel==6.17.0
 ipython==8.6.0
