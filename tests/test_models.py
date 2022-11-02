@@ -1,6 +1,5 @@
 """Tests for statistics functions within the Model layer."""
 
-#import numpy as np
 import numpy.testing as npt
 import pytest
 
@@ -55,3 +54,16 @@ def test_daily_min_error():
 
     with pytest.raises(TypeError):
         error_expected = daily_min([['abd', 'ads'], ['asd', 'auhs']])
+
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        ([[1,2,3], [4,5,6], [7,8,9]],
+        [[0.33, 0.67, 1], [0.67, 0.83, 1], [0.78, 0.89, 1]])
+    ]
+)
+def test_patient_normalise(test, expected):
+
+    import numpy as np
+    from inflammaton.models import patient_normalise
+    npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)
