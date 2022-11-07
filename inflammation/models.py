@@ -34,7 +34,8 @@ def daily_min(data):
 
 def patient_normalise(data):
     maxes = np.nanmax(data, axis=1)
-    normalised - data / maxes[: , np.newaxis]
-    normalised[np.isnan(normalised)] - 0
+    with np.errstate(invalid='ignore', divide='ignore'):
+        normalised = data / maxes[:, np.newaxis]
+    normalised[np.isnan(normalised)] = 0
     normalised[normalised < 0] = 0
     return normalised
